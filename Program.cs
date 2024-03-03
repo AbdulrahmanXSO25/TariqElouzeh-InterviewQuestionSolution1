@@ -128,8 +128,11 @@ public static class API
 
     public static void Post(CountryWithRateRequestDto countryWithRate)
     {
-        Console.WriteLine($"Success sending rate: {countryWithRate.Rate} for {countryWithRate.Name}");
+        var reversedCountryName = new string(countryWithRate.Name.Reverse().ToArray());
+
+        Console.WriteLine($"Success sending rate: {countryWithRate.Rate} for {reversedCountryName}");
     }
+
 }
 
 public class CountryWithRateRequestDto
