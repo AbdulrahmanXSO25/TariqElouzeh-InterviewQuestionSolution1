@@ -130,9 +130,19 @@ public static class API
     {
         var reversedCountryName = new string(countryWithRate.Name.Reverse().ToArray());
 
-        Console.WriteLine($"Success sending rate: {countryWithRate.Rate} for {reversedCountryName}");
-    }
+        Console.Write($"Success sending rate: {countryWithRate.Rate} for \"");
 
+        var originalColor = Console.ForegroundColor;
+        
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.Write(reversedCountryName);
+        
+        Console.ForegroundColor = originalColor;
+
+        Console.Write("\".");
+
+        Console.WriteLine();
+    }
 }
 
 public class CountryWithRateRequestDto
