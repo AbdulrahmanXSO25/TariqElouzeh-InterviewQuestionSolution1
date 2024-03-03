@@ -46,7 +46,7 @@ public static class Helpers
     {
         var populationArray = populations.Select(x => x.Value).ToArray();
 
-        return Math.Round((populationArray[populationArray.Length - 1] / populationArray[populationArray.Length - 2]), 2);
+        return Math.Round((populationArray[populationArray.Length - 1] / populationArray[populationArray.Length - 2] - 1) * 100, 2);
     }
 
     public static bool PopulationIsIncreasing(Dictionary<string, double> populations)
